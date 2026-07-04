@@ -3,29 +3,35 @@ theme = "Catppuccin Mocha"
 
 # Font
 font-family = "JetBrains Mono"
-font-size = 15
+font-size = 14
 
 # Cursor
 cursor-style = block
 cursor-style-blink = true
 
 # Window
-window-padding-x = 10
-window-padding-y = 10
+window-padding-x = 2 
+window-padding-y = 0 
+window-padding-balance = true
 
 # Background
-background-opacity = 0.922
+background-opacity = 0.85
 background-blur = true
+background-blur-radius = 20
 
 # Scrollback
-scrollback-limit = 10000000
+scrollback-limit = 300000
+
+# Mouse
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
 
 # Clipboard
-copy-on-select = false
+copy-on-select = true 
 
 # Shell
 command = zsh
-initial-command = tmux attach || tmux new
+initial-command = tmux attach || tmux new-session
 
 # Confirm before closing
 confirm-close-surface = true
@@ -36,11 +42,12 @@ window-decoration = true
 # ẩn thanh title
 gtk-titlebar = false
 
-# Keymaps
+# Keybindings
 keybind = ctrl+r=reload_config
+
+keybind = ctrl+w=close_surface
 
 keybind = ctrl+up=new_split:up
 keybind = ctrl+down=new_split:down
 keybind = ctrl+left=new_split:left
 keybind = ctrl+right=new_split:right
-
