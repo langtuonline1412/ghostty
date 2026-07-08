@@ -13,11 +13,14 @@ cursor-style-blink = true
 window-padding-x = 2 
 window-padding-y = 0 
 window-padding-balance = true
+window-save-state = always
 
 # Background
 background-opacity = 0.85
 background-blur = true
 background-blur-radius = 20
+# background-image = ~/.config/wezterm/bg/tieu-bach.jpg 
+# background-image-opacity = 0.95
 
 # Scrollback
 scrollback-limit = 300000
@@ -31,7 +34,9 @@ copy-on-select = true
 
 # Shell
 command = zsh
-initial-command = tmux attach || tmux new-session
+initial-command = tmux attach || tmux new-session -A -s main
+# Auto-attach to existing tmux session on launch, or create a new one if none exists.
+# command = zsh --login -c "if command -v tmux >/dev/null 2>&1; then tmux attach || tmux new -s main; else zsh; fi"
 
 # Confirm before closing
 confirm-close-surface = true
@@ -43,7 +48,7 @@ window-decoration = true
 gtk-titlebar = false
 
 # Keybindings
-keybind = ctrl+r=reload_config
+keybind = ctrl+shift+r=reload_config
 
 keybind = ctrl+w=close_surface
 
